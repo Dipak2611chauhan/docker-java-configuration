@@ -56,8 +56,14 @@ step 10: this command is used to run the application
  	syntax: docker run  -v {AbsolutePath:containerPath} -p {host Port}:{container port} {imageName:tagName}
 	example: docker run -v C:\Users\DELL1\OneDrive\Desktop\Dipak\docker-java-configuration:/myapp -p 8080:8080 dipakchauhan/docker-configuration-file:v1
 
-Note: Here we whole project match with container whole project so whatever you will changes we can see reflect in few seconds
-	=> example : before i had an empty project then i have create api in my local but i have run container so i can see that changes in container 
+Note: 
+
+	=> Here we hole project match with image's hole project [/myapp] so whatever you will changes we can see reflect in few seconds.
+	=> example : before i had create empty project 
+		   : then run container
+     		   : then i have create api in local 
+	  	   : container restart
+     		   : check api will works
 	=> if you want to add this changes in container you need to make build and then create image.
 	=> when you change in local if you want to see changes need to restat same container 
 
