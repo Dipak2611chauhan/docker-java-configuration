@@ -1,13 +1,15 @@
-# Use a slim OpenJDK image with apt-get support
-FROM openjdk:17-slim
+# Use the slim OpenJDK 21 image
+FROM openjdk:21-slim
 
 # Install Maven and clean up after installation to reduce image size
-RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && apt-get install -y maven \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /myapp
 
-# Copy the application files into the image (adjust the path as needed)
+# Copy the application files into the image
 COPY . .
 
 # Expose port 8080 for Spring Boot
